@@ -122,11 +122,63 @@ new Evaluator('claude', ANTHROPIC_KEY);
 
 ---
 
+## 🔌 Integrating with Mixpeek
+
+Intentflow pairs seamlessly with [Mixpeek](https://mixpeek.com) to bring intelligent UX flow optimization powered by **multimodal retrieval, classification, and clustering**.
+
+### ✅ What Mixpeek Adds
+
+* **Semantic Flow Matching**
+  → Retrieve the most relevant YAML-defined flow based on user session summaries, not just static rules.
+  *"User hovered CTA, watched demo, abandoned signup"* → → `flow: schedule_meeting`.
+
+* **Component Effectiveness Clustering**
+  → Mixpeek clusters historical sessions (flags, outcomes, component usage) to surface which combinations of tooltips, banners, or modals worked best for each intent.
+
+* **Multimodal Context Classification**
+  → Classify sessions not just from flags or clicks, but video/audio inputs, transcript data, screenshots, etc.
+  *E.g., "User watched a feature walkthrough video but skipped the pricing page."*
+
+* **Searchable UX Memory**
+  → Store all sessions as structured documents and search them:
+
+  ```ts
+  await mixpeek.search("Sessions where modals failed but tooltips worked");
+  ```
+
+* **Cookieless Personalization**
+  → Use vector embeddings and session semantics to adapt the UI—no ID tracking required.
+
+### 🧠 Example
+
+```ts
+import { retrieveFlow, rerankComponents, logSession } from 'intentflow/mixpeek';
+
+const flow = await retrieveFlow("User clicked pricing, hovered CTA, did not convert");
+
+const ranked = await rerankComponents({
+  flags: { viewed_pricing: true, clicked_cta: false },
+  goal: "schedule_meeting",
+});
+
+await logSession({
+  flags: ["viewed_pricing", "tooltip_shown"],
+  outcome: "no_conversion",
+  goal: "schedule_meeting"
+});
+```
+
+Mixpeek transforms your UX flows into a **searchable, improvable, intent-driven system**—powered by real multimodal session intelligence.
+
+---
+
 ## 🗺 Roadmap / Contributing
 
-* Flag expiration & storage adapters
-* Flow chaining & A/B testing
-* CLI `create-intentflow-app` scaffold
-* Additional UI kits (Chakra, Tailwind)
+* **Live session inspector / devtools overlay** – debug flows and flags in-browser
+* **LLM prompt builder playground** – test & refine evaluator logic in-browser
+* **Vue/Svelte adapters** – expand beyond React
+* **Analytics adapters (RudderStack, Amplitude)** – drop-in integrations
+* **Mixpeek-powered flow search & clustering UI** – see which flows are performing best
+* **Component variant testing** – show alternate tooltips/modals for same step
 
 PRs & issues welcome! 🎉
