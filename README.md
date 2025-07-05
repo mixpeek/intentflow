@@ -78,16 +78,17 @@ const flow = loadFlowFile('public-flows/example.yaml');
 
 ---
 
-## 📈 Analytics Integration (PostHog)
+## 📈 Analytics Integrations
 
-```ts
-import { initPostHog } from 'intentflow/core/analytics';
+| Provider | Focus | OSS? | Init Example |
+|----------|-------|------|--------------|
+| [PostHog](https://posthog.com) | Product analytics with feature flags | Yes | `initPostHog('PH_KEY', { api_host: 'https://app.posthog.com' })` |
+| [Amplitude](https://amplitude.com) | Product analytics, growth insights | No | `initAmplitude('AMP_KEY')` |
+| [Heap](https://heap.io) | Auto-captured event analytics | No | `initHeap('HEAP_APP_ID')` |
+| [RudderStack](https://rudderstack.com) | Customer data pipeline / CDP | Partial | `initRudderStack('WRITE_KEY', 'https://rs.example.com')` |
+| [Snowplow](https://snowplow.io) | Behavioral data platform | Yes | `initSnowplow('https://collector.acme.com')` |
+| [Matomo](https://matomo.org) | GDPR-focused web analytics | Yes | `initMatomo('SITE_ID', 'https://matomo.acme.com')` |
 
-initPostHog(process.env.PUBLIC_POSTHOG_KEY!, {
-  api_host: 'https://app.posthog.com',
-  autocapture: false,
-});
-```
 
 Every time a flag is set, Intentflow automatically fires `intentflow_flag_set` to PostHog. You can subscribe to additional events via your own code or use PostHog dashboards to correlate UX experiments with conversions.
 
