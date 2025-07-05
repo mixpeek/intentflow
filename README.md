@@ -4,6 +4,8 @@
 
 Intentflow is an open-source **UX flow framework** that lets product teams ship contextual onboarding, nudges, and promotions in minutes—not days.
 
+Read the full launch post on the Mixpeek blog: [Intentflow – Open-Source UX Flow Engine](https://mixpeek.com/blog/intentflow/)
+
 ## ✨ Why Intentflow?
 
 * **Declarative** – author complex interaction flows in simple YAML.
