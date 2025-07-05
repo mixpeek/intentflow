@@ -1,6 +1,6 @@
 {
   "name": "intentflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Open-source UX flow framework allowing declarative YAML-based interaction flows and dynamic component rendering.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
