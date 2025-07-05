@@ -1,6 +1,6 @@
 # Intentflow
 
-![Intentflow Hero](docs/hero.png)
+![Intentflow Hero](https://raw.githubusercontent.com/mixpeek/intentflow/refs/heads/master/docs/hero.png)
 
 Intentflow is an open-source **UX flow framework** that lets product teams ship contextual onboarding, nudges, and promotions in minutes—not days.
 
@@ -27,8 +27,8 @@ Use it to:
 ```bash
 # 1. Install peer deps
 npm install react
-# 2. Install Intentflow (local workspace)
-npm install ./
+# 2. Install Intentflow package
+npm install intentflow
 ```
 
 ```tsx

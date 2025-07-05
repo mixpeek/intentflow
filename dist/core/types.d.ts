@@ -3,6 +3,7 @@ export interface UXStep {
     id: string;
     event: UXEvent;
     selector?: string;
+    path?: string;
     requires_flags?: string[];
     set_flag?: string;
 }
