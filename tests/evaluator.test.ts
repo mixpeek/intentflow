@@ -29,4 +29,20 @@ describe('Evaluator', () => {
     expect(result).toEqual(mockDecision);
     spy.mockRestore();
   });
+
+  it('parses Gemini response', async () => {
+    const spy = jest.spyOn(Evaluator.prototype as any, 'callLLM').mockResolvedValueOnce(JSON.stringify(mockDecision));
+    const ev = new Evaluator('gemini', 'fake-key');
+    const result = await ev.evaluate(ctx);
+    expect(result.render).toContain('modal1');
+    spy.mockRestore();
+  });
+
+  it('parses Claude response', async () => {
+    const spy = jest.spyOn(Evaluator.prototype as any, 'callLLM').mockResolvedValueOnce(JSON.stringify(mockDecision));
+    const ev = new Evaluator('claude', 'fake-key');
+    const result = await ev.evaluate(ctx);
+    expect(result.set_flags).toContain('modal_shown');
+    spy.mockRestore();
+  });
 }); 
