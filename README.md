@@ -121,12 +121,12 @@ new Evaluator('gemini', GCP_API_KEY);
 new Evaluator('claude', ANTHROPIC_KEY);
 ```
 
-+
-+| Provider | Model Family | Init Example |
-+|----------|--------------|--------------|
-+| [OpenAI ChatGPT](https://platform.openai.com) | GPT-3.5 / GPT-4 | `new Evaluator('openai', OPENAI_KEY)` |
-+| [Google Gemini](https://ai.google.dev/) | Gemini-Pro | `new Evaluator('gemini', GEMINI_KEY)` |
-+| [Anthropic Claude](https://www.anthropic.com) | Claude 3 | `new Evaluator('claude', ANTHROPIC_KEY)` |
+
+| Provider | Model Family | Init Example |
+|----------|--------------|--------------|
+| [OpenAI ChatGPT](https://platform.openai.com) | GPT-3.5 / GPT-4 | `new Evaluator('openai', OPENAI_KEY)` |
+| [Google Gemini](https://ai.google.dev/) | Gemini-Pro | `new Evaluator('gemini', GEMINI_KEY)` |
+| [Anthropic Claude](https://www.anthropic.com) | Claude 3 | `new Evaluator('claude', ANTHROPIC_KEY)` |
 
 ---
 
