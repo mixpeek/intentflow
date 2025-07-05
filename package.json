@@ -1,0 +1,30 @@
+{
+  "name": "intentflow",
+  "version": "0.1.0",
+  "description": "Open-source UX flow framework allowing declarative YAML-based interaction flows and dynamic component rendering.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -w -p tsconfig.json",
+    "test": "echo \"No tests yet\""
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.0.10",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.8.3"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "author": ""
+}

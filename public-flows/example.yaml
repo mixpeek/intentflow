@@ -1,0 +1,12 @@
+goals:
+  schedule_meeting:
+    steps:
+      - id: viewed_pricing
+        event: page_view
+        path: "/pricing"
+        set_flag: viewed_pricing
+      - id: clicked_cta
+        event: click
+        selector: ".cta-button"
+        requires_flags: [viewed_pricing]
+        set_flag: interested_user 
