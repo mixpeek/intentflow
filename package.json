@@ -8,20 +8,30 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsc -w -p tsconfig.json",
-    "test": "echo \"No tests yet\""
+    "test": "jest"
   },
   "peerDependencies": {
     "react": "^18.3.1"
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "js-yaml": "^4.1.0"
+    "cross-fetch": "^3.2.0",
+    "js-yaml": "^4.1.0",
+    "posthog-js": "^1.256.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.4",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.0.10",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.4",
+    "react-dom": "^18.3.1",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.8.3"
   },
   "license": "MIT",

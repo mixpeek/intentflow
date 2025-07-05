@@ -9,7 +9,8 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["jest", "@testing-library/jest-dom", "node"]
   },
-  "include": ["core/**/*", "index.ts"]
+  "include": ["core/**/*", "index.ts", "types/**/*.d.ts", "tests/**/*"]
 } 

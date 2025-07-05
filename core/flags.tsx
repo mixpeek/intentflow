@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
+import { captureEvent } from './analytics';
 
 type FlagStore = Record<string, boolean>;
 
@@ -15,6 +16,7 @@ export function IntentflowProvider({ children }: { children: ReactNode }) {
 
   const setFlag = useCallback((name: string, value: boolean = true) => {
     setFlags((f) => ({ ...f, [name]: value }));
+    captureEvent('intentflow_flag_set', { flag: name, value });
   }, []);
 
   const hasFlag = useCallback((name: string) => !!flags[name], [flags]);
